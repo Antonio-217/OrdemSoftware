@@ -58,7 +58,7 @@
                 <th>Login</th>
                 <th>Perfil</th>
                 <th class="text-center">Ativo</th>
-                <th class="text-right no-sort">Ações</th>
+                <th class="text-right no-sort pr-2">Ações</th>
               </tr>
             </thead>
             <tbody>
