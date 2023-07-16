@@ -79,6 +79,52 @@
 
             </div>
 
+            
+            <div class="form-group row">
+
+              <div class="col-md-4">
+                <label>Endereço</label>
+                <input type="text" class="form-control" name="cliente_endereco" placeholder="Endereço" value="<?php echo $cliente->cliente_endereco; ?>">
+                <?php echo form_error('cliente_endereco', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+                
+              <div class="col-md-2">
+                <label>Número</label>
+                <input type="text" class="form-control" name="cliente_numero_endereco" placeholder="Número" value="<?php echo $cliente->cliente_numero_endereco; ?>">
+                <?php echo form_error('cliente_numero_endereco', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+
+              <div class="col-md-2">
+                <label>Bairro</label>
+                <input type="text" class="form-control" name="cliente_bairro" placeholder="Bairro" value="<?php echo $cliente->cliente_bairro; ?>">
+                <?php echo form_error('cliente_bairro', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+
+              <div class="col-md-3">
+                <label>Cidade</label>
+                <input type="text" class="form-control" name="cliente_cidade" placeholder="Cidade" value="<?php echo $cliente->cliente_cidade; ?>">
+                <?php echo form_error('cliente_cidade', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+
+              <div class="col-md-1">
+                <label>UF</label>
+                <input type="text" class="form-control uf" name="cliente_estado" placeholder="UF" value="<?php echo $cliente->cliente_estado; ?>">
+                <?php echo form_error('cliente_estado', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-md-4">
+                <label>Observações</label>
+                <textarea type="text" class="form-control" name="cliente_obs"><?php echo $cliente->cliente_obs; ?></textarea>
+                <?php echo form_error('cliente_obs', '<small class="form-text text-danger">','</small>'); ?>
+              </div>
+
+            </div>
+
+
 
             <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
           </form>
