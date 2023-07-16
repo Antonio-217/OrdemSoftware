@@ -18,8 +18,8 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <a title="Voltar" href="<?php echo base_url('usuarios') ?>" class="btn btn-success btn-sm float-right"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
-      </div>
+       
+    </div>
         <div class="card-body">    
         
           <form method="POST" name="form_edit">
@@ -89,7 +89,8 @@
 
             </div>
 
-            <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+            <a title="Voltar" href="<?php echo base_url('usuarios') ?>" class="btn btn-success btn-sm float-left"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
+            <button type="submit" class="btn btn-primary btn-sm ml-2"><i class="fas fa-save"></i>&nbsp;Salvar</button>
           </form>
 
         </div>
