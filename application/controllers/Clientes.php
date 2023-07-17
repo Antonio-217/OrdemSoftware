@@ -108,6 +108,41 @@ class Clientes extends CI_Controller{
      }
 
      
+     public function check_email($cliente_email){
+
+        $cliente_email = $this->input->post('cliente_email');
+
+        if($this->ordem_model->get_by_id('clientes', array('cliente_email' => $cliente_email, 'cliente_id !=' => $cliente_id))){
+            $this->form_validation->set_message('check_email', 'Esse email já existe');
+            return false;
+        } else{
+            return true;
+        }
+     }
+
+     public function check_telefone($cliente_telefone){
+
+        $cliente_telefone = $this->input->post('cliente_telefone');
+
+        if($this->ordem_model->get_by_id('clientes', array('cliente_telefone' => $cliente_telefone, 'cliente_id !=' => $cliente_id))){
+            $this->form_validation->set_message('check_telefone', 'Esse telefone já existe');
+            return false;
+        } else{
+            return true;
+        }
+     }
+
+     public function check_celular($cliente_celular){
+
+        $cliente_celular = $this->input->post('cliente_celular');
+
+        if($this->ordem_model->get_by_id('clientes', array('cliente_celular' => $cliente_celular, 'cliente_id !=' => $cliente_id))){
+            $this->form_validation->set_message('check_celular', 'Esse celular já existe');
+            return false;
+        } else{
+            return true;
+        }
+     }
 
 }
 
