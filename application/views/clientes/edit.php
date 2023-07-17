@@ -41,15 +41,27 @@
                   </div>
 
                   <div class="col-md-2">
-                    <label>RG / IE</label>
-                    <input type="text" class="form-control" name="cliente_rg_ie" placeholder="RG ou IE" value="<?php echo $cliente->cliente_rg_ie; ?>">
+                    <?php if($cliente->cliente_tipo == 1): ?>
+                      <label>RG</label>
+                      <?php else: ?>
+                        <label>IE</label>
+                        <?php endif; ?>
+                    <input type="text" class="form-control" name="cliente_rg_ie" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'RG' : 'IE')?>" value="<?php echo $cliente->cliente_rg_ie; ?>">
                     <?php echo form_error('cliente_rg_ie', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
                   <div class="col-md-2">
-                    <label>CPF / CNPJ</label>
-                    <input type="text" class="form-control cnpj" name="cliente_cpf_cnpj" placeholder="CPF ou CNPJ" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
-                    <?php echo form_error('cliente_cpf_cnpj', '<small class="form-text text-danger">','</small>'); ?>
+                    <?php if($cliente->cliente_tipo == 1): ?>
+                      <label>CPF</label>
+                      <input type="text" class="form-control cpf" name="cliente_cpf" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF' : 'CNPJ')?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
+                      <?php echo form_error('cliente_cpf', '<small class="form-text text-danger">','</small>'); ?>
+                      
+                      <?php else: ?>
+                        <label>CNPJ</label>
+                        <input type="text" class="form-control cnpj" name="cliente_cnpj" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF' : 'CNPJ')?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
+                        <?php echo form_error('cliente_cnpj', '<small class="form-text text-danger">','</small>'); ?>
+                        <?php endif; ?>
+                    
                   </div>
 
               </div>
