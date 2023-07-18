@@ -1,71 +1,19 @@
 ###################
-What is CodeIgniter
+Ordem Software
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+O projeto é um site comercial web abrangente que foi desenvolvido utilizando várias tecnologias para fornecer uma solução completa para a gestão de vendas, ordens de serviço, controle de clientes, autenticação de usuários, cadastro de empresas, cadastro de fornecedores, controle de contas a pagar e a receber, registro de vendas, geração de relatórios e outros módulos adicionais.
 
-*******************
-Release Information
-*******************
+A linguagem principal utilizada para o desenvolvimento é o PHP, juntamente com o framework CodeIgniter, que facilita a criação de aplicações web robustas e escaláveis. O CodeIgniter oferece um conjunto de bibliotecas e recursos para agilizar o processo de desenvolvimento e manutenção do site.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+O JavaScript é utilizado para adicionar interatividade e melhorar a experiência do usuário no site. Através do uso do JavaScript, é possível realizar validações de formulários em tempo real, atualizar conteúdos dinamicamente e fornecer recursos de visualização mais avançados.
 
-**************************
-Changelog and New Features
-**************************
+O jQuery é uma biblioteca JavaScript popular que simplifica a manipulação do DOM, o tratamento de eventos e a comunicação assíncrona com o servidor. Ele melhora a eficiência do desenvolvimento e fornece recursos avançados para aprimorar a interatividade do site.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+O Bootstrap é um framework front-end que oferece uma estrutura responsiva para o desenvolvimento de interfaces modernas e amigáveis. Ele simplifica o processo de criação de layouts, tornando o site compatível com dispositivos móveis e diferentes tamanhos de tela.
 
-*******************
-Server Requirements
-*******************
+O banco de dados MySQL é utilizado para armazenar todas as informações relevantes do sistema, como dados de clientes, vendas, ordens de serviço, contas a pagar e receber, entre outros. O MySQL é um sistema de gerenciamento de banco de dados confiável e amplamente utilizado, que fornece segurança e desempenho adequados para o projeto.
 
-PHP version 5.6 or newer is recommended.
+O site possui diversos módulos, incluindo controle de vendas, ordem de serviço e de venda, controle de clientes, cadastro de empresa e fornecedores, contas a pagar e receber, registro de vendas e a geração de relatórios. Esses módulos foram projetados para atender às necessidades de uma empresa comercial, fornecendo recursos para gerenciar e acompanhar todas as atividades relacionadas às vendas e aos clientes.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Em resumo, o projeto é um site comercial web desenvolvido em PHP, JavaScript, CodeIgniter, Ion Auth, Bootstrap, jQuery e utilizando o banco de dados MySQL. Ele oferece uma solução completa para a gestão de vendas, controle de clientes, cadastro de empresas e fornecedores, além de recursos avançados como controle de contas a pagar e receber, registro de vendas e a geração de relatórios para auxiliar nas operações comerciais da empresa.
