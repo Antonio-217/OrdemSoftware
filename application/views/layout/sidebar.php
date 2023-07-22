@@ -17,11 +17,20 @@
   Cadastros
 </div>
 
+<!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-  <a title="Cadastrar clientes" class="nav-link" href="<?php echo base_url('clientes'); ?>">
-  <i class="fas fa-user-tie"></i>
-    <span>Clientes</span></a>
-</li>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-database"></i>
+          <span>Cadastros</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Escolha uma opção:</h6>
+            <a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('clientes') ?>"><i class="fas fa-user-tie text-gray-800"></i>&nbsp;&nbsp;Clientes</a>
+            <a class="collapse-item" title="Gerenciar fornecedores" href="<?php echo base_url('fornecedores') ?>"><i class="fas fa-user-tag text-gray-800"></i>&nbsp;&nbsp;Fornecedores</a>
+          </div>
+        </div>
+      </li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">
@@ -30,13 +39,6 @@
 <div class="sidebar-heading">
   Configurações
 </div>
-
-<!-- Nav Item -->
-<li class="nav-item">
-  <a title="Gerenciar usuários" class="nav-link" href="<?php echo base_url('usuarios'); ?>">
-  <i class="fas fa-users"></i>
-    <span>Usuários</span></a>
-</li>
 
 <!-- Nav Item -->
 <li class="nav-item">

@@ -10,8 +10,8 @@ class Clientes extends CI_Controller{
         if (!$this->ion_auth->logged_in()){
          $this->session->set_flashdata('info', 'Sua sessão expirou!');
          redirect('login');
-     }
-     }
+        }
+    }
 
      public function index(){
 
@@ -41,27 +41,6 @@ class Clientes extends CI_Controller{
             redirect('clientes');
         } else{
 
-          /*[cliente_id] => 1
-            [cliente_data_cadastro] => 2023-07-14 11:49:22
-            [cliente_tipo] => 1
-            [cliente_nome] => Antonio
-            [cliente_sobrenome] => Bueno
-            [cliente_data_nascimento] => 2004-08-17
-            [cliente_cpf_cnpj] => 05257552094
-            [cliente_rg_ie] => 
-            [cliente_email] => antoniocbuenas@gmail.com
-            [cliente_telefone] => 
-            [cliente_celular] => 51997087813
-            [cliente_cep] => 
-            [cliente_endereco] => 
-            [cliente_numero_endereco] => 
-            [cliente_bairro] => 
-            [cliente_complemento] => 
-            [cliente_cidade] => 
-            [cliente_estado] => 
-            [cliente_ativo] => 0
-            [cliente_obs] => */
-
             $this->form_validation->set_rules('cliente_nome', '', 'trim|required|min_length[4]|max_length[45]');
             $this->form_validation->set_rules('cliente_sobrenome', '', 'trim|required|min_length[4]|max_length[150]');
             $this->form_validation->set_rules('cliente_data_nascimento', '', 'required');
@@ -84,19 +63,52 @@ class Clientes extends CI_Controller{
                 $this->form_validation->set_rules('cliente_celular', '', 'trim|max_length[15]|callback_check_celular');
             }
 
-            //$this->form_validation->set_rules('cliente_cep', '', 'trim|required|exact_length[9]');
-            //$this->form_validation->set_rules('cliente_endereco', '', 'trim|required|max_length[155]');
-            //$this->form_validation->set_rules('cliente_numero_endereco', '', 'trim|max_length[20]');
-            //$this->form_validation->set_rules('cliente_bairro', '', 'trim|required|max_length[45]');
-            //$this->form_validation->set_rules('cliente_complemento', '', 'trim|max_length[145]');
-            //$this->form_validation->set_rules('cliente_cidade', '', 'trim|required|max_length[80]');
-            //$this->form_validation->set_rules('cliente_estado', 'UF', 'trim|exact_length[2]');
-            //$this->form_validation->set_rules('cliente_obs', '', 'max_length[500]');
+            $this->form_validation->set_rules('cliente_cep', '', 'trim|required|exact_length[9]');
+            $this->form_validation->set_rules('cliente_endereco', '', 'trim|required|max_length[155]');
+            $this->form_validation->set_rules('cliente_numero_endereco', '', 'trim|max_length[20]');
+            $this->form_validation->set_rules('cliente_bairro', '', 'trim|required|max_length[45]');
+            $this->form_validation->set_rules('cliente_complemento', '', 'trim|max_length[145]');
+            $this->form_validation->set_rules('cliente_cidade', '', 'trim|required|max_length[80]');
+            $this->form_validation->set_rules('cliente_estado', 'UF', 'trim|exact_length[2]');
+            $this->form_validation->set_rules('cliente_obs', '', 'max_length[500]');
 
             if($this->form_validation->run()){
-                echo '<pre>';
-                print_r($this->input->post());
-                exit();
+
+                $data = elements(
+                    array(
+                        'cliente_nome',
+                        'cliente_sobrenome',
+                        'cliente_rg_ie',
+                        'cliente_email',
+                        'cliente_telefone',
+                        'cliente_celular',
+                        'cliente_data_nascimento',
+                        'cliente_endereco',
+                        'cliente_numero_endereco',
+                        'cliente_complemento',
+                        'cliente_cep',
+                        'cliente_bairro',
+                        'cliente_cidade',
+                        'cliente_estado',
+                        'cliente_ativo',
+                        'cliente_obs',
+                        'cliente_tipo',
+                    ), $this->input->post()
+                );
+
+                if($cliente_tipo == 1){
+                    $data['cliente_cpf_cnpj'] = $this->input->post('cliente_cpf');
+                } else{
+                    $data['cliente_cpf_cnpj'] = $this->input->post('cliente_cnpj');
+                }
+                //deixa o estado em maiusculo (uppercase)
+                $data['cliente_estado'] = strtoupper($this->input->post('cliente_estado'));
+
+                $data = html_escape($data);
+
+                $this->ordem_model->update('clientes', $data, array('cliente_id' => $cliente_id));
+                redirect('clientes');
+
             } else{
                 $data = array(
                     'titulo' => 'Atualizar cliente',
@@ -107,16 +119,112 @@ class Clientes extends CI_Controller{
                     ),
                     'cliente' => $this->ordem_model->get_by_id('clientes', array('cliente_id' => $cliente_id)),
                 );
-        
-                //echo '<pre>';
-                //print_r($data['cliente']);
-                //exit();
 
                 $this->load->view('layout/header', $data);
                 $this->load->view('clientes/edit');
                 $this->load->view('layout/footer');
             }
 
+        }
+
+     }
+
+     public function add($cliente_id = null){
+
+            $this->form_validation->set_rules('cliente_nome', '', 'trim|required|min_length[4]|max_length[45]');
+            $this->form_validation->set_rules('cliente_sobrenome', '', 'trim|required|min_length[4]|max_length[150]');
+            $this->form_validation->set_rules('cliente_data_nascimento', '', 'required');
+
+            $cliente_tipo = $this->input->post('cliente_tipo');
+
+            if($cliente_tipo == 1){
+                $this->form_validation->set_rules('cliente_cpf', '', 'trim|required|exact_length[14]|is_unique[clientes.cliente_cpf_cnpj]|callback_valida_cpf');
+            } else{
+                $this->form_validation->set_rules('cliente_cnpj', '', 'trim|required|exact_length[18]|is_unique[clientes.cliente_cpf_cnpj]|callback_valida_cnpj');
+            }
+
+            $this->form_validation->set_rules('cliente_rg_ie', '', 'trim|required|max_length[20]|is_unique[clientes.cliente_rg_ie]');
+            $this->form_validation->set_rules('cliente_email', '', 'trim|required|valid_email|max_length[50]|is_unique[clientes.cliente_email]');
+
+            if(!empty($this->input->post('cliente_telefone'))){
+                $this->form_validation->set_rules('cliente_telefone', '', 'trim|max_length[14]|is_unique[clientes.cliente_telefone]');
+            }
+            
+            if(!empty($this->input->post('cliente_celular'))){
+                $this->form_validation->set_rules('cliente_celular', '', 'trim|max_length[15]|is_unique[clientes.cliente_celular]');
+            }
+
+            $this->form_validation->set_rules('cliente_cep', '', 'trim|required|exact_length[9]');
+            $this->form_validation->set_rules('cliente_endereco', '', 'trim|required|max_length[155]');
+            $this->form_validation->set_rules('cliente_numero_endereco', '', 'trim|max_length[20]');
+            $this->form_validation->set_rules('cliente_bairro', '', 'trim|required|max_length[45]');
+            $this->form_validation->set_rules('cliente_complemento', '', 'trim|max_length[145]');
+            $this->form_validation->set_rules('cliente_cidade', '', 'trim|required|max_length[80]');
+            $this->form_validation->set_rules('cliente_estado', 'UF', 'trim|exact_length[2]');
+            $this->form_validation->set_rules('cliente_obs', '', 'max_length[500]');
+
+            if($this->form_validation->run()){
+
+                $data = elements(
+                    array(
+                        'cliente_nome',
+                        'cliente_sobrenome',
+                        'cliente_rg_ie',
+                        'cliente_email',
+                        'cliente_telefone',
+                        'cliente_celular',
+                        'cliente_data_nascimento',
+                        'cliente_endereco',
+                        'cliente_numero_endereco',
+                        'cliente_complemento',
+                        'cliente_cep',
+                        'cliente_bairro',
+                        'cliente_cidade',
+                        'cliente_estado',
+                        'cliente_ativo',
+                        'cliente_obs',
+                        'cliente_tipo',
+                    ), $this->input->post()
+                );
+
+                if($cliente_tipo == 1){
+                    $data['cliente_cpf_cnpj'] = $this->input->post('cliente_cpf');
+                } else{
+                    $data['cliente_cpf_cnpj'] = $this->input->post('cliente_cnpj');
+                }
+                //deixa o estado em maiusculo (uppercase)
+                $data['cliente_estado'] = strtoupper($this->input->post('cliente_estado'));
+
+                $data = html_escape($data);
+
+                $this->ordem_model->insert('clientes', $data);
+                redirect('clientes');
+
+            } else{
+                $data = array(
+                    'titulo' => 'Cadastrar cliente',
+                    
+                    'scripts' => array(
+                        'vendor/mask/jquery.mask.min.js',
+                        'vendor/mask/app.js',
+                        'js/clientes.js',
+                    ),
+                );
+
+                $this->load->view('layout/header', $data);
+                $this->load->view('clientes/add');
+                $this->load->view('layout/footer');
+            }
+            
+     }
+     public function del($cliente_id = null){
+
+        if(!$cliente_id || !$this->ordem_model->get_by_id('clientes', array('cliente_id' => $cliente_id))){
+            $this->session->set_flashdata('error', 'Cliente não encontrado');
+            redirect('clientes');
+        } else{
+            $this->ordem_model->delete('clientes', array('cliente_id' => $cliente_id));
+            redirect('clientes');
         }
 
      }
