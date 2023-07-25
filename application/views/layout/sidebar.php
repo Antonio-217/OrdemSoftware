@@ -28,6 +28,7 @@
             <h6 class="collapse-header">Escolha uma opção:</h6>
             <a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('clientes') ?>"><i class="fas fa-user-tie text-gray-800"></i>&nbsp;&nbsp;Clientes</a>
             <a class="collapse-item" title="Gerenciar fornecedores" href="<?php echo base_url('fornecedores') ?>"><i class="fas fa-user-tag text-gray-800"></i>&nbsp;&nbsp;Fornecedores</a>
+            <a class="collapse-item" title="Gerenciar vendedores" href="<?php echo base_url('vendedores') ?>"><i class="fas fa-user-secret text-gray-800"></i>&nbsp;&nbsp;Vendedores</a>
           </div>
         </div>
       </li>
