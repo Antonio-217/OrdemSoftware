@@ -88,7 +88,7 @@
                       </div>
                       <div class="modal-body">Para excluir confirme clicando em <strong>"Sim"</strong> </div>
                       <div class="modal-footer">
-                        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Não</button>
                         <a class="btn btn-danger btn-sm" href="<?php echo base_url('fornecedores/del/'.$fornecedor->fornecedor_id); ?>">Sim</a>
                       </div>
                     </div>

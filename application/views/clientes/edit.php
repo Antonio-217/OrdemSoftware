@@ -98,61 +98,56 @@
               <legend class="w-auto font-small"><i class="fas fa-map-marker-alt"></i>&nbsp;Endereço</legend>
 
                 <div class="form-group row mb-4">
+                  <div class="col-md-4">
+                    <label>Endereço</label>
+                    <input type="text" class="form-control" name="cliente_endereco" placeholder="Endereço" value="<?php echo $cliente->cliente_endereco; ?>">
+                    <?php echo form_error('cliente_endereco', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
+                    
+                  <div class="col-md-2">
+                    <label>Número</label>
+                    <input type="text" class="form-control" name="cliente_numero_endereco" placeholder="Número" value="<?php echo $cliente->cliente_numero_endereco; ?>">
+                    <?php echo form_error('cliente_numero_endereco', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
 
-              <div class="col-md-4">
-                <label>Endereço</label>
-                <input type="text" class="form-control" name="cliente_endereco" placeholder="Endereço" value="<?php echo $cliente->cliente_endereco; ?>">
-                <?php echo form_error('cliente_endereco', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
-                
-              <div class="col-md-2">
-                <label>Número</label>
-                <input type="text" class="form-control" name="cliente_numero_endereco" placeholder="Número" value="<?php echo $cliente->cliente_numero_endereco; ?>">
-                <?php echo form_error('cliente_numero_endereco', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
-
-              <div class="col-md-6">
-                <label>Complemento</label>
-                <input type="text" class="form-control" name="cliente_complemento" placeholder="Complemento" value="<?php echo $cliente->cliente_complemento; ?>">
-                <?php echo form_error('cliente_complemento', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
-
-            </div>
+                  <div class="col-md-6">
+                    <label>Complemento</label>
+                    <input type="text" class="form-control" name="cliente_complemento" placeholder="Complemento" value="<?php echo $cliente->cliente_complemento; ?>">
+                    <?php echo form_error('cliente_complemento', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
+                </div>
 
                 <div class="form-group row mb-4">
+                  <div class="col-md-2">
+                    <label>CEP</label>
+                    <input type="text" class="form-control cep" name="cliente_cep" placeholder="CEP" value="<?php echo $cliente->cliente_cep; ?>">
+                    <?php echo form_error('cliente_cep', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
 
-              <div class="col-md-2">
-                <label>CEP</label>
-                <input type="text" class="form-control cep" name="cliente_cep" placeholder="CEP" value="<?php echo $cliente->cliente_cep; ?>">
-                <?php echo form_error('cliente_cep', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
+                  <div class="col-md-4">
+                    <label>Bairro</label>
+                    <input type="text" class="form-control" name="cliente_bairro" placeholder="Bairro" value="<?php echo $cliente->cliente_bairro; ?>">
+                    <?php echo form_error('cliente_bairro', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
 
-              <div class="col-md-4">
-                <label>Bairro</label>
-                <input type="text" class="form-control" name="cliente_bairro" placeholder="Bairro" value="<?php echo $cliente->cliente_bairro; ?>">
-                <?php echo form_error('cliente_bairro', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
+                  <div class="col-md-4">
+                    <label>Cidade</label>
+                    <input type="text" class="form-control" name="cliente_cidade" placeholder="Cidade" value="<?php echo $cliente->cliente_cidade; ?>">
+                    <?php echo form_error('cliente_cidade', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
 
-              <div class="col-md-4">
-                <label>Cidade</label>
-                <input type="text" class="form-control" name="cliente_cidade" placeholder="Cidade" value="<?php echo $cliente->cliente_cidade; ?>">
-                <?php echo form_error('cliente_cidade', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
-
-              <div class="col-md-2">
-                <label>UF</label>
-                <input type="text" class="form-control uf" name="cliente_estado" placeholder="UF" value="<?php echo $cliente->cliente_estado; ?>">
-                <?php echo form_error('cliente_estado', '<small class="form-text text-danger">','</small>'); ?>
-              </div>
-
-            </div>
+                  <div class="col-md-2">
+                    <label>UF</label>
+                    <input type="text" class="form-control uf" name="cliente_estado" placeholder="UF" value="<?php echo $cliente->cliente_estado; ?>">
+                    <?php echo form_error('cliente_estado', '<small class="form-text text-danger">','</small>'); ?>
+                  </div>
+                </div>
             </fieldset>
 
             <fieldset class="mt-4 border p-2">
               <legend class="w-auto font-small"><i class="fas fa-cog"></i>&nbsp;Configurações</legend>
 
                 <div class="form-group row mb-4">
-
                   <div class="col-md-2">
                     <label>Cliente ativo</label>
                     <select class="form-control" name="cliente_ativo" id="">
@@ -166,9 +161,7 @@
                     <textarea type="text" class="form-control" name="cliente_obs"><?php echo $cliente->cliente_obs; ?></textarea>
                     <?php echo form_error('cliente_obs', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
-  
                 </div>
-
             </fieldset>
 
             <div class="form-group row mb-3">

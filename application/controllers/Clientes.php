@@ -112,7 +112,6 @@ class Clientes extends CI_Controller{
             } else{
                 $data = array(
                     'titulo' => 'Atualizar cliente',
-                    
                     'scripts' => array(
                         'vendor/mask/jquery.mask.min.js',
                         'vendor/mask/app.js',
