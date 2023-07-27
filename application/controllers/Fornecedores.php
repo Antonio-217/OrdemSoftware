@@ -123,7 +123,7 @@ class Fornecedores extends CI_Controller{
             $this->form_validation->set_rules('fornecedor_cnpj', '', 'trim|required|exact_length[18]|callback_valida_cnpj');
             $this->form_validation->set_rules('fornecedor_ie', '', 'trim|required|max_length[20]|callback_check_ie');
             $this->form_validation->set_rules('fornecedor_email', '', 'trim|required|valid_email|max_length[50]|callback_check_email');
-            $this->form_validation->set_rules('fornecedor_telefone', '', 'trim|required|max_length[14]|callback_check_telefone');
+            $this->form_validation->set_rules('fornecedor_telefone', '', 'trim|required|max_length[15]|callback_check_telefone');
             $this->form_validation->set_rules('fornecedor_celular', '', 'trim|required|max_length[15]|callback_check_celular');
             $this->form_validation->set_rules('fornecedor_cep', '', 'trim|required|exact_length[9]');
             $this->form_validation->set_rules('fornecedor_endereco', '', 'trim|required|max_length[155]');

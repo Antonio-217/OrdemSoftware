@@ -56,7 +56,7 @@ class Clientes extends CI_Controller{
             $this->form_validation->set_rules('cliente_email', '', 'trim|required|valid_email|max_length[50]|callback_check_email');
 
             if(!empty($this->input->post('cliente_telefone'))){
-                $this->form_validation->set_rules('cliente_telefone', '', 'trim|max_length[14]|callback_check_telefone');
+                $this->form_validation->set_rules('cliente_telefone', '', 'trim|max_length[15]|callback_check_telefone');
             }
             
             if(!empty($this->input->post('cliente_celular'))){
