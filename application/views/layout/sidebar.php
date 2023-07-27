@@ -14,11 +14,11 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-  Cadastros
+  Módulos
 </div>
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-database"></i>
           <span>Cadastros</span>
@@ -29,9 +29,24 @@
             <a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('clientes') ?>"><i class="fas fa-user-tie text-gray-800"></i>&nbsp;&nbsp;Clientes</a>
             <a class="collapse-item" title="Gerenciar fornecedores" href="<?php echo base_url('fornecedores') ?>"><i class="fas fa-user-tag text-gray-800"></i>&nbsp;&nbsp;Fornecedores</a>
             <a class="collapse-item" title="Gerenciar vendedores" href="<?php echo base_url('vendedores') ?>"><i class="fas fa-user-secret text-gray-800"></i>&nbsp;&nbsp;Vendedores</a>
+            <a class="collapse-item" title="Gerenciar serviços" href="<?php echo base_url('servicos') ?>"><i class="fas fa-concierge-bell text-gray-800"></i>&nbsp;&nbsp;Serviços</a>
           </div>
         </div>
-      </li>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-truck-loading"></i>
+          <span>Estoque</span>
+        </a>
+        <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Escolha uma opção:</h6>
+            <a class="collapse-item" title="Gerenciar marcas" href="<?php echo base_url('marcas') ?>"><i class="fas fa-cubes text-gray-800"></i></i>&nbsp;&nbsp;Marcas</a>
+          </div>
+        </div>
+    </li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">
