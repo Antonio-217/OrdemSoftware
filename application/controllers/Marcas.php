@@ -38,6 +38,38 @@ class Marcas extends CI_Controller{
 
     }
 
+    public function add(){
+
+        $this->form_validation->set_rules('marca_nome', '', 'trim|required|min_length[2]|max_length[45]|is_unique[marcas.marca_nome]');
+          
+            if($this->form_validation->run()){
+
+                $data = elements(
+                    array(
+                        'marca_nome',
+                        'marca_ativa',
+                    ), $this->input->post()
+                );
+                $data = html_escape($data);
+
+                $this->ordem_model->insert('marcas', $data);
+                redirect('marcas');
+
+            } else{
+                $data = array(
+                    'titulo' => 'Cadastrar marca',
+                    'scripts' => array(
+                        'vendor/mask/jquery.mask.min.js',
+                        'vendor/mask/app.js',
+                    ),
+                );
+                $this->load->view('layout/header', $data);
+                $this->load->view('marcas/add');
+                $this->load->view('layout/footer');
+            }
+
+    }
+
     public function edit($marca_id = null){
 
         if(!$marca_id || !$this->ordem_model->get_by_id('marcas', array('marca_id' => $marca_id))){
@@ -45,7 +77,7 @@ class Marcas extends CI_Controller{
             redirect('marcas');
         } else{
 
-            $this->form_validation->set_rules('marca_nome', '', 'trim|required|min_length[5]|max_length[45]|callback_check_nome');
+            $this->form_validation->set_rules('marca_nome', '', 'trim|required|min_length[2]|max_length[45]|callback_check_nome');
           
 
             if($this->form_validation->run()){

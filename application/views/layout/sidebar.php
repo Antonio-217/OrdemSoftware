@@ -43,7 +43,8 @@
         <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma opção:</h6>
-            <a class="collapse-item" title="Gerenciar marcas" href="<?php echo base_url('marcas') ?>"><i class="fas fa-cubes text-gray-800"></i></i>&nbsp;&nbsp;Marcas</a>
+            <a class="collapse-item" title="Gerenciar marcas" href="<?php echo base_url('marcas') ?>"><i class="fas fa-inbox text-gray-800"></i>&nbsp;&nbsp;Marcas</a>
+            <a class="collapse-item" title="Gerenciar categorias" href="<?php echo base_url('categorias') ?>"><i class="fas fa-tags text-gray-800"></i>&nbsp;&nbsp;Categorias</a>
           </div>
         </div>
     </li>
