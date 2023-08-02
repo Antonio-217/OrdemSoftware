@@ -10,7 +10,7 @@
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?php echo base_url('marcas') ?>">marcas</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('marcas') ?>">Marcas</a></li>
         <li class="breadcrumb-item active" aria-current="page"><?php echo $titulo ?></li>
       </ol>
     </nav>
@@ -22,7 +22,7 @@
         
           <form method="POST" name="form_add">
           
-            <fieldset class="mt-4 border p-2">
+            <fieldset class="mt-4 mb-3 border p-2">
             <legend class="w-auto font-small"><i class="fas fa-info-circle"></i>&nbsp;Informações</legend>
     
               <div class="form-group row mb-4">

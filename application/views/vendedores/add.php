@@ -10,7 +10,7 @@
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="<?php echo base_url('vendedores') ?>">vendedores</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('vendedores') ?>">Vendedores</a></li>
         <li class="breadcrumb-item active" aria-current="page"><?php echo $titulo ?></li>
       </ol>
     </nav>
@@ -116,7 +116,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="mt-4 border p-2">
+            <fieldset class="mt-4 mb-3 border p-2">
               <legend class="w-auto font-small"><i class="fas fa-cog"></i>&nbsp;Configurações</legend>
 
                 <div class="form-group row mb-4">

@@ -68,7 +68,7 @@
                   <td><?php echo $user->username ?></td>
                   <td><?php echo $user->email ?></td>
                   <td><?php echo ($this->ion_auth->is_admin($user->id) ? 'administrador' : 'vendedor'); ?></td>
-                  <td class="text-center pr-4"><?php echo ($user->active == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($user->active == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('usuarios/edit/'.$user->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#user-<?php echo $user->id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-user-times"></i>&nbsp;Excluir</a>

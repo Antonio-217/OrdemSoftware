@@ -70,7 +70,7 @@
                   <td><?php echo $fornecedor->fornecedor_cnpj ?></td>
                   <td><?php echo $fornecedor->fornecedor_telefone ?></td>
                   <td><?php echo $fornecedor->fornecedor_email ?></td>
-                  <td class="text-center pr-4"><?php echo ($fornecedor->fornecedor_ativo == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($fornecedor->fornecedor_ativo == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('fornecedores/edit/'.$fornecedor->fornecedor_id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#fornecedor-<?php echo $fornecedor->fornecedor_id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-user-times"></i>&nbsp;Excluir</a>

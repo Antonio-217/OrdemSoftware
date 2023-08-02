@@ -64,7 +64,7 @@
                 <tr>
                   <td><?php echo $categoria->categoria_id ?></td>
                   <td><?php echo $categoria->categoria_nome ?></td>
-                  <td class="text-center pr-4"><?php echo ($categoria->categoria_ativa == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($categoria->categoria_ativa == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('categorias/edit/'.$categoria->categoria_id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#categoria-<?php echo $categoria->categoria_id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>&nbsp;Excluir</a>

@@ -142,7 +142,7 @@
 
               <div class="col-md-12">
                 <label>Texto ordem de serviço e venda</label>
-                <textarea class="form-control form-control-user" name="sistema_txt_ordem_servico" placeholder="Texto ordem de serviço e venda"><?php echo $sistema->sistema_txt_ordem_servico; ?></textarea>
+                <textarea class="form-control form-control-user" name="sistema_txt_ordem_servico" placeholder="Texto ordem de serviço e venda."><?php echo $sistema->sistema_txt_ordem_servico; ?></textarea>
                 <?php echo form_error('sistema_txt_ordem_servico', '<small class="form-text text-danger">','</small>'); ?>
               </div>
 

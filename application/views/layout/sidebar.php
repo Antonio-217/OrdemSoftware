@@ -4,9 +4,9 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/'); ?>">
   <div class="sidebar-brand-icon rotate-n-15">
-    <i class="fas fa-laugh-wink"></i>
+  <i class="fas fa-fingerprint"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Ordem Software</div>
+  <div class="sidebar-brand-text mx-3">Gear Solutions</div>
 </a>
 
 <!-- Divider -->
@@ -25,10 +25,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Escolha uma opção:</h6>
+            <h6 class="collapse-header">Escolha uma opção</h6>
             <a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('clientes') ?>"><i class="fas fa-user-tie text-gray-800"></i>&nbsp;&nbsp;Clientes</a>
-            <a class="collapse-item" title="Gerenciar fornecedores" href="<?php echo base_url('fornecedores') ?>"><i class="fas fa-user-tag text-gray-800"></i>&nbsp;&nbsp;Fornecedores</a>
             <a class="collapse-item" title="Gerenciar vendedores" href="<?php echo base_url('vendedores') ?>"><i class="fas fa-user-secret text-gray-800"></i>&nbsp;&nbsp;Vendedores</a>
+            <a class="collapse-item" title="Gerenciar fornecedores" href="<?php echo base_url('fornecedores') ?>"><i class="fas fa-user-tag text-gray-800"></i>&nbsp;&nbsp;Fornecedores</a>
             <a class="collapse-item" title="Gerenciar serviços" href="<?php echo base_url('servicos') ?>"><i class="fas fa-concierge-bell text-gray-800"></i>&nbsp;&nbsp;Serviços</a>
           </div>
         </div>
@@ -42,8 +42,9 @@
         </a>
         <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Escolha uma opção:</h6>
+            <h6 class="collapse-header">Escolha uma opção</h6>
             <a class="collapse-item" title="Gerenciar marcas" href="<?php echo base_url('marcas') ?>"><i class="fas fa-inbox text-gray-800"></i>&nbsp;&nbsp;Marcas</a>
+            <a class="collapse-item" title="Gerenciar produtos" href="<?php echo base_url('produtos') ?>"><i class="fas fa-box-open text-gray-800"></i>&nbsp;&nbsp;Produtos</a>
             <a class="collapse-item" title="Gerenciar categorias" href="<?php echo base_url('categorias') ?>"><i class="fas fa-tags text-gray-800"></i>&nbsp;&nbsp;Categorias</a>
           </div>
         </div>
