@@ -1,6 +1,6 @@
-###################
+##################
 Ordem Software
-###################
+##################
 
 O projeto é um site comercial web abrangente que foi desenvolvido utilizando várias tecnologias para fornecer uma solução completa para a gestão de vendas, ordens de serviço, controle de clientes, autenticação de usuários, cadastro de empresas, cadastro de fornecedores, controle de contas a pagar e a receber, registro de vendas, geração de relatórios e outros módulos adicionais.
 
