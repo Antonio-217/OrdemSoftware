@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
   <i class="fas fa-fingerprint"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Gear Solutions</div>
+  <div class="sidebar-brand-text mx-3">Gear Sistemas</div>
 </a>
 
 <!-- Divider -->
@@ -59,6 +59,11 @@
 </div>
 
 <!-- Nav Item -->
+<li class="nav-item">
+  <a title="Gerenciar dados dos suários" class="nav-link" href="<?php echo base_url('usuarios'); ?>">
+  <i class="fas fa-users-cog"></i>
+    <span>Usuários</span></a>
+</li>
 <li class="nav-item">
   <a title="Gerenciar dados do sistema" class="nav-link" href="<?php echo base_url('sistema'); ?>">
   <i class="fas fa-cogs"></i>

@@ -26,7 +26,6 @@
             </div>
           </div>
         </div>
-
       <?php endif; ?>
 
       <?php if($message = $this->session->flashdata('error')) : ?>
@@ -40,7 +39,19 @@
             </div>
           </div>
         </div>
+      <?php endif; ?>
 
+      <?php if($message = $this->session->flashdata('info')) : ?>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;<?php echo $message ?></strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
       <?php endif; ?>
       
     <!-- DataTales Example -->
@@ -70,7 +81,7 @@
                   <td><?php echo $fornecedor->fornecedor_cnpj ?></td>
                   <td><?php echo $fornecedor->fornecedor_telefone ?></td>
                   <td><?php echo $fornecedor->fornecedor_email ?></td>
-                  <td class="text-center h5 pr-4"><?php echo ($fornecedor->fornecedor_ativo == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($fornecedor->fornecedor_ativo == 1 ? '<span class="badge badge-primary btn-sm">Sim</span>' : '<span class="badge badge-secondary btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('fornecedores/edit/'.$fornecedor->fornecedor_id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#fornecedor-<?php echo $fornecedor->fornecedor_id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-user-times"></i>&nbsp;Excluir</a>

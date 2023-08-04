@@ -3,17 +3,15 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Ordem Software <?php echo date('Y') ?>&nbsp; | By Antonio Bueno</span>
+            <span>Copyright &copy; Gear Sistemas <?php echo date('Y') ?>&nbsp; | By Antonio Bueno</span>
           </div>
         </div>
       </footer>
       <!-- End of Footer -->
-
-    <?php endif; ?>
-    </div>
+  <?php endif; ?>
     <!-- End of Content Wrapper -->
 
-  </div>
+ 
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->

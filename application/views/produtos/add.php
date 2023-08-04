@@ -20,16 +20,15 @@
 
         <div class="card-body">    
         
-          <form method="POST" name="form_edit">
-            <p><strong><i class="fas fa-clock"></i>&nbsp;Última alteração:&nbsp;</strong><?php echo formata_data_banco_com_hora($produto->produto_data_alteracao); ?></p>
-          
+          <form method="POST" name="form_add">
+     
             <fieldset class="mt-4 border p-2">
             <legend class="w-auto font-small"><i class="fas fa-info-circle"></i>&nbsp;Informações gerais</legend>
     
               <div class="form-group row mb-4">
                   <div class="col-md-2">
                     <label>Código produto</label>
-                    <input type="text" class="form-control" name="produto_codigo" value="<?php echo $produto->produto_codigo; ?>" readonly>
+                    <input type="text" class="form-control" name="produto_codigo" value="<?php echo produto_codigo; ?>" readonly>
                   </div>
 
                   <div class="col-md-2">

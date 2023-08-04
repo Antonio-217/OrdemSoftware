@@ -68,7 +68,7 @@
                   <td><?php echo $servico->servico_nome ?></td>
                   <td><?php echo 'R$&nbsp;'.$servico->servico_preco ?></td>
                   <td><?php echo word_limiter($servico->servico_descricao, 10) ?></td>
-                  <td class="text-center h5 pr-4"><?php echo ($servico->servico_ativo == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($servico->servico_ativo == 1 ? '<span class="badge badge-primary btn-sm">Sim</span>' : '<span class="badge badge-secondary btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('servicos/edit/'.$servico->servico_id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#servico-<?php echo $servico->servico_id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>&nbsp;Excluir</a>

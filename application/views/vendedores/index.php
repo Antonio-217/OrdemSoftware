@@ -70,7 +70,7 @@
                   <td><?php echo $vendedor->vendedor_codigo ?></td>
                   <td><?php echo $vendedor->vendedor_celular ?></td>
                   <td><?php echo $vendedor->vendedor_email ?></td>
-                  <td class="text-center h5 pr-4"><?php echo ($vendedor->vendedor_ativo == 1 ? '<span class="badge badge-success btn-sm">Sim</span>' : '<span class="badge badge-danger btn-sm">Não</span>') ?></td>
+                  <td class="text-center h5 pr-4"><?php echo ($vendedor->vendedor_ativo == 1 ? '<span class="badge badge-primary btn-sm">Sim</span>' : '<span class="badge badge-secondary btn-sm">Não</span>') ?></td>
                   <td class="text-right">
                     <a title="Editar" href="<?php echo base_url('vendedores/edit/'.$vendedor->vendedor_id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i>&nbsp;Editar</a>
                     <a title="Excluir" href="JavaScript(void)" data-toggle="modal" data-target="#vendedor-<?php echo $vendedor->vendedor_id; ?>" class="btn btn-sm btn-danger"><i class="fas fa-user-times"></i>&nbsp;Excluir</a>
