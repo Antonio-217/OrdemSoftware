@@ -28,18 +28,18 @@
               <div class="form-group row mb-4">
                   <div class="col-md-2">
                     <label>Código produto</label>
-                    <input type="text" class="form-control" name="produto_codigo" value="<?php echo produto_codigo; ?>" readonly>
+                    <input type="text" class="form-control" name="produto_codigo" value="<?php echo $produto_codigo; ?>" readonly>
                   </div>
 
                   <div class="col-md-2">
                     <label>Código de barras</label>
-                    <input type="text" class="form-control" name="produto_codigo_barras" placeholder="Código de barras" value="<?php echo $produto->produto_codigo_barras; ?>">
+                    <input type="text" class="form-control" name="produto_codigo_barras" placeholder="Código de barras" value="<?php echo set_value('produto_codigo_barras') ?>">
                     <?php echo form_error('produto_codigo_barras', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
                     
                   <div class="col-md-8">
                     <label>Descrição</label>
-                    <input type="text" class="form-control" name="produto_descricao" placeholder="Descrição do produto" value="<?php echo $produto->produto_descricao; ?>">
+                    <input type="text" class="form-control" name="produto_descricao" placeholder="Descrição do produto" value="<?php echo set_value('produto_descricao'); ?>">
                     <?php echo form_error('produto_descricao', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
               </div> 
@@ -47,13 +47,13 @@
               <div class="form-group row mb-4">
                   <div class="col-md-1">
                     <label>Unidade</label>
-                    <input type="text" class="form-control" name="produto_unidade" placeholder="Unidade do produto" value="<?php echo $produto->produto_unidade; ?>">
+                    <input type="text" class="form-control" name="produto_unidade" placeholder="Unidade do produto" value="<?php echo set_value('produto_unidade'); ?>">
                     <?php echo form_error('produto_unidade', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
                   <div class="col-md-2">
                     <label>NCM</label>
-                    <input type="text" class="form-control" name="produto_ncm" placeholder="NCM do produto" value="<?php echo $produto->produto_ncm; ?>">
+                    <input type="text" class="form-control" name="produto_ncm" placeholder="NCM do produto" value="<?php echo set_value('produto_ncm'); ?>">
                     <?php echo form_error('produto_ncm', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
@@ -61,7 +61,7 @@
                     <label>Categoria</label>
                       <select class="custom-select" name="produto_categoria_id">
                         <?php foreach($categorias as $categoria): ?>
-                          <option value="<?php echo $categoria->categoria_id ?>" <?php echo ($categoria->categoria_id == $produto->produto_categoria_id ? 'selected' : '') ?>><?php echo $categoria->categoria_nome ?></option>
+                          <option value="<?php echo $categoria->categoria_id ?>"><?php echo $categoria->categoria_nome ?></option>
                         <?php endforeach; ?>
                       </select>
                   </div>
@@ -70,7 +70,7 @@
                     <label>Marca</label>
                       <select class="form-control" name="produto_marca_id">
                         <?php foreach($marcas as $marca): ?>
-                          <option value="<?php echo $marca->marca_id ?>" <?php echo ($marca->marca_id == $produto->produto_marca_id ? 'selected' : '') ?>><?php echo $marca->marca_nome ?></option>
+                          <option value="<?php echo $marca->marca_id ?>"><?php echo $marca->marca_nome ?></option>
                         <?php endforeach; ?>
                       </select>
                   </div>
@@ -79,7 +79,7 @@
                     <label>Fornecedor</label>
                       <select class="custom-select" name="produto_fornecedor_id">
                         <?php foreach($fornecedores as $fornecedor): ?>
-                          <option value="<?php echo $fornecedor->fornecedor_id ?>" <?php echo ($fornecedor->fornecedor_id == $produto->produto_fornecedor_id ? 'selected' : '') ?>><?php echo $fornecedor->fornecedor_nome_fantasia ?></option>
+                          <option value="<?php echo $fornecedor->fornecedor_id ?>"><?php echo $fornecedor->fornecedor_nome_fantasia ?></option>
                         <?php endforeach; ?>
                       </select>
                   </div>
@@ -92,53 +92,49 @@
               <div class="form-group row mb-4">
                   <div class="col-md-3">
                     <label>Preço de custo</label>
-                    <input type="text" class="form-control money" name="produto_preco_custo" placeholder="Preço de custo" value="<?php echo $produto->produto_preco_custo; ?>">
+                    <input type="text" class="form-control money" name="produto_preco_custo" placeholder="Preço de custo" value="<?php echo set_value('produto_preco_custo'); ?>">
                     <?php echo form_error('produto_preco_custo', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
                   <div class="col-md-3">
                     <label>Preço de venda</label>
-                    <input type="text" class="form-control money" name="produto_preco_venda" placeholder="Preço de venda" value="<?php echo $produto->produto_preco_venda; ?>">
+                    <input type="text" class="form-control money" name="produto_preco_venda" placeholder="Preço de venda" value="<?php echo set_value('produto_preco_venda'); ?>">
                     <?php echo form_error('produto_preco_venda', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
                     
                   <div class="col-md-3">
                     <label>Estoque mínimo</label>
-                    <input type="number" class="form-control" name="produto_estoque_minimo" placeholder="Estoque mínimo" value="<?php echo $produto->produto_estoque_minimo; ?>">
+                    <input type="number" class="form-control" name="produto_estoque_minimo" placeholder="Estoque mínimo" value="<?php echo set_value('produto_estoque_minimo'); ?>">
                     <?php echo form_error('produto_estoque_minimo', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
                   <div class="col-md-3">
                     <label>Quantidade em estoque</label>
-                    <input type="number" class="form-control" name="produto_qtde_estoque" placeholder="Quantidade em estoque" value="<?php echo $produto->produto_qtde_estoque; ?>">
+                    <input type="number" class="form-control" name="produto_qtde_estoque" placeholder="Quantidade em estoque" value="<?php echo set_value('produto_qtde_estoque'); ?>">
                     <?php echo form_error('produto_qtde_estoque', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
               </div> 
             </fieldset>
 
-            <fieldset class="mt-4 border p-2">
+            <fieldset class="mt-4 border mb-3 p-2">
               <legend class="w-auto font-small"><i class="fas fa-cog"></i>&nbsp;Configurações</legend>
 
                 <div class="form-group row mb-4">
                   <div class="col-md-2">
                     <label>Produto ativo</label>
                     <select class="form-control" name="produto_ativo" id="">
-                      <option value="0" <?php echo ($produto->produto_ativo == 0 ? 'selected' : ''); ?>>Não</option>
-                      <option value="1" <?php echo ($produto->produto_ativo == 1 ? 'selected' : ''); ?>>Sim</option>
+                      <option value="0">Não</option>
+                      <option value="1">Sim</option>
                     </select>
                   </div>
 
                   <div class="col-md-10">
                     <label>Observações do produto</label>
-                    <textarea type="text" class="form-control" name="produto_obs"><?php echo $produto->produto_obs; ?></textarea>
+                    <textarea type="text" class="form-control" name="produto_obs"><?php echo set_value('produto_obs'); ?></textarea>
                     <?php echo form_error('produto_obs', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
                 </div>
             </fieldset>
-
-            <div class="form-group row mb-3">
-              <input type="hidden" name="produto_id" value="<?php echo $produto->produto_id; ?>"/>
-            </div>
 
             <a title="Voltar" href="<?php echo base_url($this->router->fetch_class()) ?>" class="btn btn-success btn-sm float-left"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
             <button type="submit" class="btn btn-primary btn-sm ml-2"><i class="fas fa-save"></i>&nbsp;Salvar</button>

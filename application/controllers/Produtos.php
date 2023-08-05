@@ -29,12 +29,6 @@ class Produtos extends CI_Controller{
             'produtos' => $this->produtos_model->get_all(),
         );
 
-        
-        /*echo '<pre>';
-        print_r($data['produtos']);
-        exit();*/
-        
-
         $this->load->view('layout/header', $data);
         $this->load->view('produtos/index');
         $this->load->view('layout/footer');
@@ -54,7 +48,7 @@ class Produtos extends CI_Controller{
                 $this->form_validation->set_rules('produto_ncm', 'NCM', 'trim|max_length[15]');
                 $this->form_validation->set_rules('produto_preco_custo', 'Preço de custo', 'trim|required|max_length[45]');
                 $this->form_validation->set_rules('produto_preco_venda', 'Preço de venda', 'trim|required|max_length[45]|callback_check_preco_venda');
-                $this->form_validation->set_rules('produto_estoque_minimo', 'Estoque mínimo', 'trim|greater_than_equal_to[0]|max_length[10]');
+                $this->form_validation->set_rules('produto_estoque_minimo', 'Estoque mínimo', 'trim|required|greater_than_equal_to[0]|max_length[10]');
                 $this->form_validation->set_rules('produto_qtde_estoque', 'Quantidade em estoque', 'trim|required|max_length[10]');
                 $this->form_validation->set_rules('produto_obs', 'Observação', 'trim|max_length[500]');
                 
@@ -117,7 +111,7 @@ class Produtos extends CI_Controller{
                 $this->form_validation->set_rules('produto_ncm', 'NCM', 'trim|max_length[15]');
                 $this->form_validation->set_rules('produto_preco_custo', 'Preço de custo', 'trim|required|max_length[45]');
                 $this->form_validation->set_rules('produto_preco_venda', 'Preço de venda', 'trim|required|max_length[45]|callback_check_preco_venda');
-                $this->form_validation->set_rules('produto_estoque_minimo', 'Estoque mínimo', 'trim|greater_than_equal_to[0]|max_length[10]');
+                $this->form_validation->set_rules('produto_estoque_minimo', 'Estoque mínimo', 'trim|required|greater_than_equal_to[0]|max_length[10]');
                 $this->form_validation->set_rules('produto_qtde_estoque', 'Quantidade em estoque', 'trim|required|max_length[10]');
                 $this->form_validation->set_rules('produto_obs', 'Observação', 'trim|max_length[500]');
                 
@@ -167,6 +161,17 @@ class Produtos extends CI_Controller{
             }
      } 
 
+     public function del($produto_id = null){
+
+        if(!$produto_id || !$this->ordem_model->get_by_id('produtos', array('produto_id' => $produto_id))){
+            $this->session->set_flashdata('error', 'Produto não encontrado');
+            redirect('produtos');
+        } else{
+            $this->ordem_model->delete('produtos', array('produto_id' => $produto_id));
+            redirect('produtos');
+        }
+     }
+
      public function check_descricao($produto_descricao){
 
         $produto_id = $this->input->post('produto_id');
@@ -195,6 +200,12 @@ class Produtos extends CI_Controller{
      public function check_preco_venda($produto_preco_venda){
 
         $produto_preco_custo = $this->input->post('produto_preco_custo');
+
+        $produto_preco_custo = str_replace('.', '', $produto_preco_custo);
+        $produto_preco_venda = str_replace('.', '', $produto_preco_venda);
+
+        $produto_preco_custo = str_replace(',', '', $produto_preco_custo);
+        $produto_preco_venda = str_replace(',', '', $produto_preco_venda);
 
         if($produto_preco_custo > $produto_preco_venda){
             $this->form_validation->set_message('check_preco_venda', 'Preço de venda deve ser igual ou maior que o preço de custo');
