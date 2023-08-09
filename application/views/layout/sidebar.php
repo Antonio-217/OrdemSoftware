@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
   <i class="fas fa-fingerprint"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Gear Sistemas</div>
+  <div class="sidebar-brand-text mx-3">Ordem Software</div>
 </a>
 
 <!-- Divider -->
@@ -47,6 +47,20 @@
             <a class="collapse-item" title="Gerenciar produtos" href="<?php echo base_url('produtos') ?>"><i class="fas fa-box-open text-gray-800"></i>&nbsp;&nbsp;Produtos</a>
             <a class="collapse-item" title="Gerenciar categorias" href="<?php echo base_url('categorias') ?>"><i class="fas fa-tags text-gray-800"></i>&nbsp;&nbsp;Categorias</a>
           </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-balance-scale-right"></i>
+          <span>Financeiro</span>
+        </a>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Escolha uma opção</h6>
+            <a class="collapse-item" title="Gerenciar contas a pagar" href="<?php echo base_url('pagar') ?>"><i class="fas fa-donate text-gray-800"></i></i>&nbsp;&nbsp;Contas a pagar</a>
+            </div>
         </div>
     </li>
 

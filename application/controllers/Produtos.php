@@ -87,9 +87,9 @@ class Produtos extends CI_Controller{
                     ),
                     'produto' => $this->ordem_model->get_by_id('produtos', array('produto_id' => $produto_id)),
     
-                    'marcas' => $this->ordem_model->get_all('marcas'),
-                    'categorias' => $this->ordem_model->get_all('categorias'),
-                    'fornecedores' => $this->ordem_model->get_all('fornecedores'),
+                    'marcas' => $this->ordem_model->get_all('marcas', array('marca_ativa' => 1)),
+                    'categorias' => $this->ordem_model->get_all('categorias', array('categoria_ativa' => 1)),
+                    'fornecedores' => $this->ordem_model->get_all('fornecedores', array('fornecedor_ativo' => 1)),
                 );
 
                 $this->load->view('layout/header', $data);
@@ -149,9 +149,9 @@ class Produtos extends CI_Controller{
                         'vendor/mask/app.js',
                     ),
                     'produto_codigo' => $this->ordem_model->generate_unique_code('produtos', 'numeric', 8, 'produto_codigo'),
-                    'marcas' => $this->ordem_model->get_all('marcas'),
-                    'categorias' => $this->ordem_model->get_all('categorias'),
-                    'fornecedores' => $this->ordem_model->get_all('fornecedores'),
+                    'marcas' => $this->ordem_model->get_all('marcas', array('marca_ativa' => 1)),
+                    'categorias' => $this->ordem_model->get_all('categorias', array('ccategoria_ativa' => 1)),
+                    'fornecedores' => $this->ordem_model->get_all('fornecedores', array('fornecedor_ativo' => 1)),
                 );
 
                 $this->load->view('layout/header', $data);

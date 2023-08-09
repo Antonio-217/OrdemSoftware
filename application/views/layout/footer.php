@@ -3,7 +3,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Gear Sistemas <?php echo date('Y') ?>&nbsp; | By Antonio Bueno</span>
+            <span>Copyright &copy; Ordem Software <?php echo date('Y') ?>&nbsp; | By Antonio Bueno</span>
           </div>
         </div>
       </footer>
@@ -47,6 +47,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url('public/js/sb-admin-2.min.js')?>"></script>
+  <script src="<?php echo base_url('public/js/util.js')?>"></script>
 
   <?php if (isset($scripts)): ?>
     <?php foreach ($scripts as $script): ?>
