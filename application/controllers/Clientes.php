@@ -74,6 +74,16 @@ class Clientes extends CI_Controller{
 
             if($this->form_validation->run()){
 
+                $cliente_ativo = $this->input->post('cliente_ativo');
+
+                if($this->db->table_exists('contas_receber')){
+
+                    if($cliente_ativo == 0 && $this->ordem_model->get_by_id('contas_receber', array('conta_receber_cliente_id' => $cliente_id, 'conta_receber_status' => 0))){
+                        $this->session->set_flashdata('info', 'Esse cliente não pode ser desativado, pois existe uma conta em aberto!');
+                        redirect('clientes');
+                    }
+                }
+
                 $data = elements(
                     array(
                         'cliente_nome',

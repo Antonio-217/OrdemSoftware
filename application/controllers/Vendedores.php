@@ -192,7 +192,7 @@ class Vendedores extends CI_Controller{
         $vendedor_id = $this->input->post('vendedor_id');
 
         if($this->ordem_model->get_by_id('vendedores', array('vendedor_rg' => $vendedor_rg, 'vendedor_id !=' => $vendedor_id))){
-            $this->form_validation->set_message('check_rg', 'Esse documento já existe');
+            $this->form_validation->set_message('check_rg', 'Esse documento já existe!');
             return false;
         } else{
             return true;
@@ -204,7 +204,7 @@ class Vendedores extends CI_Controller{
         $vendedor_id = $this->input->post('vendedor_id');
 
         if($this->ordem_model->get_by_id('vendedores', array('vendedor_email' => $vendedor_email, 'vendedor_id !=' => $vendedor_id))){
-            $this->form_validation->set_message('check_email', 'Esse email já existe');
+            $this->form_validation->set_message('check_email', 'Esse email já existe!');
             return false;
         } else{
             return true;
@@ -216,7 +216,7 @@ class Vendedores extends CI_Controller{
         $vendedor_id = $this->input->post('vendedor_id');
 
         if($this->ordem_model->get_by_id('vendedores', array('vendedor_telefone' => $vendedor_telefone, 'vendedor_id !=' => $vendedor_id))){
-            $this->form_validation->set_message('check_telefone', 'Esse telefone já existe');
+            $this->form_validation->set_message('check_telefone', 'Esse telefone já existe!');
             return false;
         } else{
             return true;
@@ -228,7 +228,7 @@ class Vendedores extends CI_Controller{
         $vendedor_id = $this->input->post('vendedor_id');
 
         if($this->ordem_model->get_by_id('vendedores', array('vendedor_celular' => $vendedor_celular, 'vendedor_id !=' => $vendedor_id))){
-            $this->form_validation->set_message('check_celular', 'Esse celular já existe');
+            $this->form_validation->set_message('check_celular', 'Esse celular já existe!');
             return false;
         } else{
             return true;
@@ -242,7 +242,7 @@ class Vendedores extends CI_Controller{
             $vendedor_id = $this->input->post('vendedor_id');
 
             if ($this->ordem_model->get_by_id('vendedores', array('vendedor_id !=' => $vendedor_id, 'vendedor_cpf' => $cpf))) {
-                $this->form_validation->set_message('valida_cpf', 'Este CPF já existe');
+                $this->form_validation->set_message('valida_cpf', 'Este CPF já existe!');
                 return FALSE;
             }
         }
@@ -251,7 +251,7 @@ class Vendedores extends CI_Controller{
         // Verifica se nenhuma das sequências abaixo foi digitada, caso seja, retorna falso
         if (strlen($cpf) != 11 || $cpf == '00000000000' || $cpf == '11111111111' || $cpf == '22222222222' || $cpf == '33333333333' || $cpf == '44444444444' || $cpf == '55555555555' || $cpf == '66666666666' || $cpf == '77777777777' || $cpf == '88888888888' || $cpf == '99999999999') {
 
-            $this->form_validation->set_message('valida_cpf', 'Por favor digite um CPF válido');
+            $this->form_validation->set_message('valida_cpf', 'Por favor digite um CPF válido!');
             return FALSE;
         } else {
             // Calcula os números para verificar se o CPF é verdadeiro
@@ -262,7 +262,7 @@ class Vendedores extends CI_Controller{
                 }
                 $d = ((10 * $d) % 11) % 10;
                 if ($cpf[$c] != $d) {
-                    $this->form_validation->set_message('valida_cpf', 'Por favor digite um CPF válido');
+                    $this->form_validation->set_message('valida_cpf', 'Por favor digite um CPF válido!');
                     return FALSE;
                 }
             }

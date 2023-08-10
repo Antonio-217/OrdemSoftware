@@ -155,7 +155,7 @@ class Pagar extends CI_Controller{
         }
 
         if($this->ordem_model->get_by_id('contas_pagar', array('conta_pagar_id' => $conta_pagar_id, 'conta_pagar_status' => 0))){
-            $this->session->set_flashdata('info', 'Esta conta não pode ser excluída, pois ainda está em aberto');
+            $this->session->set_flashdata('info', 'Esta conta não pode ser excluída, pois ainda está em aberto!');
             redirect('pagar');
         }
 

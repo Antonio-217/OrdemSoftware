@@ -176,7 +176,7 @@ class Usuarios extends CI_Controller
         }
 
         if($this->ion_auth->is_admin($usuario_id)){
-            $this->session->set_flashdata('error', 'O administrador não pode ser excluído');
+            $this->session->set_flashdata('error', 'O administrador não pode ser excluído!');
             redirect('usuarios');
         }
 
@@ -184,7 +184,7 @@ class Usuarios extends CI_Controller
             $this->session->set_flashdata('sucesso', 'Usuário excluído com sucesso');
             redirect('usuarios');
         } else{
-            $this->session->set_flashdata('error', 'O administrador não pode ser excluído');
+            $this->session->set_flashdata('error', 'O administrador não pode ser excluído!');
             redirect('usuarios');
         }
 
@@ -195,7 +195,7 @@ class Usuarios extends CI_Controller
 
         if($this->ordem_model->get_by_id('users', array('email' => $email, 'id != ' => $usuario_id))){
 
-            $this->form_validation->set_message('email_check', 'Esse email já existe');
+            $this->form_validation->set_message('email_check', 'Esse email já existe!');
 
             return false;
         } else{
@@ -209,7 +209,7 @@ class Usuarios extends CI_Controller
 
         if($this->ordem_model->get_by_id('users', array('username' => $username, 'id != ' => $usuario_id))){
 
-            $this->form_validation->set_message('username_check', 'Esse usuário já existe');
+            $this->form_validation->set_message('username_check', 'Esse usuário já existe!');
 
             return false;
         } else{

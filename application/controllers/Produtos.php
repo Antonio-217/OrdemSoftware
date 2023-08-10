@@ -177,7 +177,7 @@ class Produtos extends CI_Controller{
         $produto_id = $this->input->post('produto_id');
 
         if($this->ordem_model->get_by_id('produtos', array('produto_descricao' => $produto_descricao, 'produto_id !=' => $produto_id))){
-            $this->form_validation->set_message('check_descricao', 'Esse produto já existe');
+            $this->form_validation->set_message('check_descricao', 'Esse produto já existe!');
 
             return false;
         } else{
@@ -190,7 +190,7 @@ class Produtos extends CI_Controller{
         $produto_id = $this->input->post('produto_id');
 
         if($this->ordem_model->get_by_id('produtos', array('produto_codigo_barras' => $produto_codigo_barras, 'produto_id !=' => $produto_id))){
-            $this->form_validation->set_message('check_codigo_barras', 'Esse código de barras já está vinculado em um produto');
+            $this->form_validation->set_message('check_codigo_barras', 'Esse código de barras já está vinculado em um produto!');
             return false;
         } else{
             return true;
@@ -208,7 +208,7 @@ class Produtos extends CI_Controller{
         $produto_preco_venda = str_replace(',', '', $produto_preco_venda);
 
         if($produto_preco_custo > $produto_preco_venda){
-            $this->form_validation->set_message('check_preco_venda', 'Preço de venda deve ser igual ou maior que o preço de custo');
+            $this->form_validation->set_message('check_preco_venda', 'Preço de venda deve ser igual ou maior que o preço de custo!');
             return false;
         } else{
             return true;

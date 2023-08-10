@@ -138,7 +138,7 @@ class Servicos extends CI_Controller{
         $servico_id = $this->input->post('servico_id');
 
         if($this->ordem_model->get_by_id('servicos', array('servico_nome' => $servico_nome, 'servido_id !=' => $servico_id))){
-            $this->form_validation->set_message('check_nome', 'Esse serviço já existe');
+            $this->form_validation->set_message('check_nome', 'Esse serviço já existe!');
             return false;
         } else{
             return true;
