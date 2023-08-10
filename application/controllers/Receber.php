@@ -45,7 +45,6 @@ class Receber extends CI_Controller{
             $this->session->set_flashdata('error', 'Conta não encontrada');
             redirect('receber');
         } else{
-
             $this->form_validation->set_rules('conta_receber_cliente_id', '', 'required');
             $this->form_validation->set_rules('conta_receber_data_vencimento', '', 'required');
             $this->form_validation->set_rules('conta_receber_valor', '', 'required');
