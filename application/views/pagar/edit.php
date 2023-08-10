@@ -46,7 +46,7 @@
 
                   <div class="col-md-2">
                     <label>Valor da conta</label>
-                    <input type="text" class="form-control money" name="conta_pagar_valor" value="<?php echo $conta_pagar->conta_pagar_valor; ?>">
+                    <input type="text" class="form-control money" name="conta_pagar_valor" placeholder="Valor" value="<?php echo $conta_pagar->conta_pagar_valor; ?>">
                     <?php echo form_error('conta_pagar_valor', '<small class="form-text text-danger">','</small>'); ?>
                   </div>
 
