@@ -75,13 +75,13 @@ class Pagar extends CI_Controller{
                     'titulo' => 'Atualizar conta',
                     'styles' => array(
                         'vendor/datatables/dataTables.bootstrap4.min.css',
-                        'vendor/select2/select2.min.css',
+                        'vendor/select2/select.min.css',
                     ),
                     'scripts' => array(
                         'vendor/mask/jquery.mask.min.js',
                         'vendor/mask/app.js',
-                        'vendor/select2/select2.min.js',
-                        'vendor/select2/custom.js',
+                        'vendor/select2/select.min.js',
+                        'vendor/select2/app.js',
                     ),
                     'conta_pagar' => $this->ordem_model->get_by_id('contas_pagar', array('conta_pagar_id' => $conta_pagar_id)),
                     'fornecedores' => $this->ordem_model->get_all('fornecedores'),
@@ -129,13 +129,13 @@ class Pagar extends CI_Controller{
                     'titulo' => 'Adicionar conta',
                     'styles' => array(
                         'vendor/datatables/dataTables.bootstrap4.min.css',
-                        'vendor/select2/select2.min.css',
+                        'vendor/select2/select.min.css',
                     ),
                     'scripts' => array(
                         'vendor/mask/jquery.mask.min.js',
                         'vendor/mask/app.js',
-                        'vendor/select2/select2.min.js',
-                        'vendor/select2/custom.js',
+                        'vendor/select2/select.min.js',
+                        'vendor/select2/app.js',
                     ),
                     'fornecedores' => $this->ordem_model->get_all('fornecedores'),
                 );

@@ -74,13 +74,13 @@ class Receber extends CI_Controller{
                     'titulo' => 'Atualizar conta',
                     'styles' => array(
                         'vendor/datatables/dataTables.bootstrap4.min.css',
-                        'vendor/select2/select2.min.css',
+                        'vendor/select2/select.min.css',
                     ),
                     'scripts' => array(
                         'vendor/mask/jquery.mask.min.js',
                         'vendor/mask/app.js',
-                        'vendor/select2/select2.min.js',
-                        'vendor/select2/custom.js',
+                        'vendor/select2/select.min.js',
+                        'vendor/select2/app.js',
                     ),
                     'conta_receber' => $this->ordem_model->get_by_id('contas_receber', array('conta_receber_id' => $conta_receber_id)),
                     'clientes' => $this->ordem_model->get_all('clientes', array('cliente_ativo' => 1)),
@@ -128,13 +128,13 @@ class Receber extends CI_Controller{
                     'titulo' => 'Adicionar conta',
                     'styles' => array(
                         'vendor/datatables/dataTables.bootstrap4.min.css',
-                        'vendor/select2/select2.min.css',
+                        'vendor/select2/select.min.css',
                     ),
                     'scripts' => array(
                         'vendor/mask/jquery.mask.min.js',
                         'vendor/mask/app.js',
-                        'vendor/select2/select2.min.js',
-                        'vendor/select2/custom.js',
+                        'vendor/select2/select.min.js',
+                        'vendor/select2/app.js',
                     ),
                     'clientes' => $this->ordem_model->get_all('clientes'),
                 );
@@ -154,7 +154,7 @@ class Receber extends CI_Controller{
         }
 
         if($this->ordem_model->get_by_id('contas_receber', array('conta_receber_id' => $conta_receber_id, 'conta_receber_status' => 0))){
-            $this->session->set_flashdata('info', 'Esta conta não pode ser excluída, pois ainda está em aberto');
+            $this->session->set_flashdata('info', 'Esta conta não pode ser excluída, pois ainda está em aberto!');
             redirect('receber');
         }
 
